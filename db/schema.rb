@@ -10,18 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161210182103) do
+ActiveRecord::Schema.define(version: 20161210195854) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "eventitems", force: :cascade do |t|
+    t.string   "description", limit: 50
+    t.time     "starts_at"
+    t.integer  "event_id"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.index ["event_id"], name: "index_eventitems_on_event_id", using: :btree
+  end
+
   create_table "events", force: :cascade do |t|
-    t.string   "title",       null: false
-    t.string   "description"
-    t.datetime "starts_at"
+    t.string   "title",      limit: 20, null: false
+    t.date     "date"
     t.integer  "trip_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
     t.index ["trip_id"], name: "index_events_on_trip_id", using: :btree
   end
 
@@ -57,6 +65,7 @@ ActiveRecord::Schema.define(version: 20161210182103) do
     t.string   "state"
     t.string   "city"
     t.string   "address"
+    t.date     "start_date",  null: false
     t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
@@ -72,6 +81,7 @@ ActiveRecord::Schema.define(version: 20161210182103) do
     t.datetime "updated_at",      null: false
   end
 
+  add_foreign_key "eventitems", "events"
   add_foreign_key "events", "trips"
   add_foreign_key "expenses", "trips"
   add_foreign_key "packingitems", "packinglists"

@@ -7,6 +7,7 @@ class Trips < ActiveRecord::Migration[5.0]
       t.string :state
       t.string :city
       t.string :address
+      t.date :start_date, null: false
       t.references :user, foreign_key: true, index: true
 
       t.timestamps(null: false)
