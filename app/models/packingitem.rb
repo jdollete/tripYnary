@@ -1,3 +1,4 @@
 class Packingitem < ApplicationRecord
-  belongs_to :packinglists
+  belongs_to :packinglist
+
 end
