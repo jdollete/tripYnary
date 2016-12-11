@@ -1,2 +1,50 @@
-<h1>Trips#new</h1>
-<p>Find me in app/views/trips/new.html.erb</p>
+<div class="event-content">
+  <% if flash[:notice] %>
+    <% flash[:notice].each do |error| %>
+      <ul>
+        <li><%= error %></li>
+      </ul>
+    <% end %>
+  <% end %>
+</div>
+
+
+<div class="title-div">
+  <p><h2 class="text-title">Create A New Trip!</h2></p>
+</div>
+
+<div class="container div_bg">
+  <form class="col s12" action="/trips" method="post">
+    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+
+    <label for="title">Trip Title:</label>
+    <input type="text" class="form-control form_s500" placeholder="" name="trip[title]">
+
+    <label for="description">Description:</label>
+    <input type="text" class="form-control form_s500" placeholder="" name="trip[description]">
+
+    <div class="">
+      <div class="f_left">
+        <label for="city">City:</label>
+        <input type="text" class="form-control form_s240" placeholder="" name="trip[city]">
+      </div>
+      <div class="f_left">
+        <label for="state">State/Province:</label>
+        <input type="text" class="form-control form_s240" placeholder="" name="trip[state]">
+      </div>
+      <div class="f_left">
+        <label for="country">Country:</label>
+        <input type="text" class="form-control form_s240" placeholder="" name="trip[country]">
+      </div>
+    </div>
+    <div class="f_left">
+      <label for="start_date">Date of trip:</label>
+      <input type="date" class="form-control form_s240" placeholder="" name="trip[start_date]">
+    </div>
+    <div class="">
+      <input class="submit_button" type="submit" value="Create!">
+    </div>
+  </div>
+
+  </form>
+</div>

@@ -1,0 +1,18 @@
+.form_s500 {
+  width: 500px;
+}
+
+.form_s240 {
+  width: 240px;
+  display: block;
+}
+
+.f_left {
+  padding-right: 20px;
+  float: left;
+}
+
+.submit_button {
+  margin-top: 65px;
+  margin-left: 80px;
+}
