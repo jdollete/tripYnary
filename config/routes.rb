@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'packinglists/show'
+
   get 'packingitems/new'
 
   get 'eventitems/new'
