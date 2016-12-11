@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       login(@user)
       redirect_to questions_path
     else
-      flash[:notice] = @user.errors.full_message
+      flash[:notice] = @users.errors.full_message
       render 'new'
     end
   end

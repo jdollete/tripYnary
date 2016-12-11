@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       redirect_to root_path
       # redirect "/users/#{user.id}"
     else
-      flash[:notice] = @user.errors.full_message
+      flash[:notice] = @users.errors.full_message
       render 'login'
     end
   end
