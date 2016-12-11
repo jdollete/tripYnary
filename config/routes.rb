@@ -1,3 +1,19 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :users
+
+  resources :trips
+
+  resources :events do
+    resources :eventitems, only: [:create, :update, :destroy]
+  end
+
+  resources :expenses
+
+  resources :packinglists do
+    resources :packingitems, only: [:create, :update, :destroy]
+  end
+
+  get '/login' => 'sessions#new'
+  post '/sessions' => 'sessions#create'
+  delete '/logout' => 'sessions#destroy'
 end
