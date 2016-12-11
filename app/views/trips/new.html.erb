@@ -1,3 +1,13 @@
+<div class="event-content">
+  <% if flash[:notice] %>
+    <% flash[:notice].each do |error| %>
+      <ul>
+        <li><%= error %></li>
+      </ul>
+    <% end %>
+  <% end %>
+</div>
+
 
 <div class="title-div">
   <p><h2 class="text-title">Create A New Trip!</h2></p>
@@ -15,14 +25,26 @@
 
     <div class="">
       <div class="f_left">
-        <label for="address">Street Address:</label>
-        <input type="text" class="form-control form_s250" placeholder="" name="trip[address]">
+        <label for="city">City:</label>
+        <input type="text" class="form-control form_s240" placeholder="" name="trip[city]">
+      </div>
+      <div class="f_left">
+        <label for="state">State/Province:</label>
+        <input type="text" class="form-control form_s240" placeholder="" name="trip[state]">
       </div>
       <div class="f_left">
         <label for="country">Country:</label>
-        <input type="text" class="form-control form_s250" placeholder="" name="trip[country]">
+        <input type="text" class="form-control form_s240" placeholder="" name="trip[country]">
       </div>
     </div>
+    <div class="f_left">
+      <label for="start_date">Date of trip:</label>
+      <input type="date" class="form-control form_s240" placeholder="" name="trip[start_date]">
+    </div>
+    <div class="">
+      <input class="submit_button" type="submit" value="Create!">
+    </div>
+  </div>
 
   </form>
 </div>

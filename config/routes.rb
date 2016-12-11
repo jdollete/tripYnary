@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'packingitems/new'
+
+  get 'eventitems/new'
+
+  get 'expenses/new'
+
   get 'trips/new'
 
   get 'trips/show'

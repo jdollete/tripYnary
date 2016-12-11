@@ -82,20 +82,6 @@ a {
    padding-bottom: 20px;
 }
 
-.form_s500 {
-  width: 500px;
-}
-
-.form_s250 {
-  width: 250px;
-  display: block;
-}
-
-.f_left {
-  padding-right: 20px;
-  float: left;
-}
-
 label {
   font-family: 'Source Sans Pro', sans-serif;
   color: white;
