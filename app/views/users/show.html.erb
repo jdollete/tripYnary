@@ -1,0 +1,17 @@
+<div class="title-div">
+  <h2 class="text-title">Welcome, <%=@user.first_name%>!!</h2><br>
+</div>
+
+<div class="container div_bg">
+  <hr>
+  <ul>
+  <h5 class="profile-content">Here are your upcoming trips:</h5>
+    <ul>
+      <% @user.trips.order(start_date: :asc).each do |trip| %>
+      <li><a href="/trips/<%=trip.id%>"><%= trip.start_date %> - <%= trip.title %></a></li>
+      <% end %>
+    </ul>
+  </ul>
+  <hr>
+  <button type="button" class="btn btn-default" onclick="location.href='/trips/new';"><span class="glyphicon glyphicon-plus"></span> Add Trip</button>
+</div>
