@@ -1,6 +1,23 @@
-<ul class="nav nav-tabs">
-  <li role="presentation" class="active"><a href="#">Itinerary</a></li>
-  <li role="presentation" class=""><a href="#">Packing List</a></li>
-  <li role="presentation" class=""><a href="#">Expenses</a></li>
-  <li role="presentation" class=""><a href="#">Other Notes</a></li>
-</ul>
+<div class="div_bg">
+  <div class="">
+    <ul class="nav nav-tabs">
+      <li role="presentation" class=""><a href="#">Itinerary</a></li>
+      <li role="presentation" class=""><a href="#">Packing List</a></li>
+      <li role="presentation" class=""><a href="#">Expenses</a></li>
+      <li role="presentation" class=""><a href="#">Other Notes</a></li>
+    </ul>
+  </div>
+
+  <div class="">
+    <%= render partial: "details" %>
+  </div>
+
+  <div class="">
+    <%= render partial: "packinglists/show" %>
+  </div>
+
+  <div class="">
+    <%= render partial: "expenses/show" %>
+  </div>
+
+</div>

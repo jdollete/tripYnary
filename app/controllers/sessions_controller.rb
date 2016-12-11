@@ -9,8 +9,8 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to @user
     else
-      flash[:notice] = @users.errors.full_message
-      render 'login'
+      flash[:notice] = "Incorrect email or password"
+      render 'new'
     end
   end
 

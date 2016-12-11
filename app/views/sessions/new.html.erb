@@ -1,7 +1,9 @@
-<div class ="log-in container">
-  <h3>Log In </h3>
+
+
+<div class ="log-in container title-div">
+  <h3 class="text-title">Log In </h3>
   <% if flash[:notice] %>
-    <p style="color: green;"><%= flash[:notice] %></p>
+    <p class="event-content"><%= flash[:notice] %></p>
   <% end %>
 
   <form action="/sessions" method="post">
