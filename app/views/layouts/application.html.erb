@@ -4,6 +4,7 @@
     <title>TripYnary</title>
     <%= csrf_meta_tags %>
 
+    <link href="https://fonts.googleapis.com/css?family=Special+Elite|Roboto+Slab|Glegoo:700|Source+Sans+Pro:300" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -19,7 +20,7 @@
           <a class="navbar-brand" href="/">tripYnary</a>
         </div>
         <ul class="nav navbar-nav">
-          <li class="active"><a href="/">Home</a></li>
+          <li class="active"><a href="/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
         </ul>
       <%if logged_in?%>
         <ul class="nav navbar-nav navbar-right">
@@ -27,7 +28,7 @@
           <li><a><form action="/logout" method="post">
             <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
             <input type="hidden" name="_method" value="delete">
-            <input class="btn btn-link" type="submit" value="Log out">
+            <input id="logout" class="btn btn-link" type="submit" value="Log out">
           </form></a></li>
 
         </ul>
@@ -41,5 +42,7 @@
     </nav>
 
     <%= yield %>
+    <footer id="footer" class="navbar-inverse">
+    </footer>
   </body>
 </html>

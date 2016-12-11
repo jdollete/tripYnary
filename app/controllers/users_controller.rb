@@ -16,7 +16,11 @@ class UsersController < ApplicationController
   end
 
   def show
-
+    if logged_in?
+      @user = current_user
+    else
+      render session_new_path
+    end
   end
 
   private
