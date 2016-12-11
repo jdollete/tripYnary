@@ -70,6 +70,7 @@ a {
 .div_bg {
   background-color: black;
   opacity: 0.90;
+  padding-bottom: 25px;
 }
 
 #footer {
@@ -79,4 +80,24 @@ a {
    height:50px;
    width:100%;
    padding-bottom: 20px;
+}
+
+.form_s500 {
+  width: 500px;
+}
+
+.form_s250 {
+  width: 250px;
+  display: block;
+}
+
+.f_left {
+  padding-right: 20px;
+  float: left;
+}
+
+label {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: white;
+  margin: 20px;
 }
