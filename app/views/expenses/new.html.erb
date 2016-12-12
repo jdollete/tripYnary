@@ -1,2 +1,22 @@
-<h1>Expenses#new</h1>
-<p>Find me in app/views/expenses/new.html.erb</p>
+<div class ="register container div_bg">
+  <h3 class="text-title">New Expense</h3>
+  <% if flash[:notice] %>
+    <p style="color: green;"><%= flash[:notice] %></p>
+  <% end %>
+</div>
+
+<div class="container div_bg">
+  <form class="" action="/trips/<%= params[:trip_id] %>/expenses" method="post">
+    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+
+    <label for="expense">Expense Description:</label>
+    <input type="text" class="form-control form_s240" placeholder="" name="expense[expense]">
+
+    <label for="cost">Cost:</label>
+    <input type="text" class="form-control form_s240" placeholder="" name="expense[cost]">
+
+    <div class="">
+      <input class="new_submit" type="submit" name="" value="Submit">
+    </div>
+  </form>
+</div>

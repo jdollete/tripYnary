@@ -1,0 +1,76 @@
+
+#expense_item_div {
+  display: inline-block;
+}
+
+#expense_cost_div {
+  display: inline-block;
+}
+
+.title_inline {
+  display: inline-block;
+}
+
+.new_expense_button {
+  display: inline-block;
+  position: absolute;
+  margin-left: 20px;
+  margin-top: 30px;
+}
+
+.edit_div{
+  display: inline-block;
+}
+
+.delete_div{
+  display: inline-block;
+}
+
+.expense_item_list {
+  list-style-type: none;
+  padding: 5px;
+}
+
+.expense_cost_list {
+  list-style-type: none;
+  padding: 5px;
+}
+
+.expense_edit_list {
+  list-style-type: none;
+  padding: 3px;
+}
+
+.expense_hr {
+  display: inline-block;
+  width: 300px;
+}
+
+.total_div {
+  margin-left: 45px;
+  display: inline-block;
+}
+
+.total_cost {
+  display: inline-block;
+  margin-left: 75px;
+}
+
+.delete_button {
+  color: white;
+  padding: 5px;
+}
+
+.edit_button {
+  color: white;
+  padding: 5px;
+}
+
+.padding_zero {
+  padding: 0;
+}
+
+.new_submit {
+  margin-top: 35px;
+  color: black;
+}

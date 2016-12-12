@@ -1,1 +1,58 @@
-Expenses
+<div class="">
+  <div class="title-div title_inline">
+    <h2 class="text-title">Trip Expenses</h2><br>
+  </div>
+  <div class="new_expense_button">
+    <a href="/trips/<%="#{@trip.id}"%>/expenses/new"><span class="glyphicon glyphicon-plus"></span></a>
+  </div>
+</div>
+
+<div class="">
+  <div id="expense_item_div" class="event-content">
+    <ul>
+    <% @trip.expenses.each do |expense| %>
+      <li class="expense_item_list"><%= expense.expense %></li>
+    <% end %>
+    </ul>
+  </div>
+
+  <div id="expense_cost_div" class="event-content">
+    <ul>
+    <% @trip.expenses.each do |expense| %>
+      <li class="expense_cost_list">$<%= '%.2f' % expense.cost %></li>
+    <% end %>
+    </ul>
+  </div>
+
+  <div id="" class="event-content edit_div">
+
+    <ul class="padding_zero">
+    <% @trip.expenses.each do |expense| %>
+      <li class="expense_edit_list"><a href="/trips/<%="#{@trip.id}"%>/expenses/<%="#{expense.id}"%>/edit"><span class="glyphicon glyphicon-pencil edit_button"></span></a></li>
+    <% end %>
+    </ul>
+  </div>
+
+  <div id="" class="event-content delete_div">
+    <ul class="padding_zero">
+    <% @trip.expenses.each do |expense| %>
+      <form class="delete_button" action="/trips/<%="#{@trip.id}"%>/expenses/<%="#{expense.id}"%>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+        <input type="image" value=" " class="glyphicon glyphicon-remove">
+      </form>
+    <% end %>
+    </ul>
+  </div>
+
+</div>
+<hr class="expense_hr">
+
+<div class="">
+  <div class="total_div">
+    <p class="event-content">Total:</p>
+  </div>
+  <div class="event-content total_cost">
+    <p>$<%= '%.2f' % @trip.expenses.sum(:cost) %></p>
+  </div>
+</div>

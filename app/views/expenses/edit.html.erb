@@ -1,0 +1,23 @@
+<div class ="register container div_bg">
+  <h3 class="text-title">Edit Expense</h3>
+  <% if flash[:notice] %>
+    <p style="color: green;"><%= flash[:notice] %></p>
+  <% end %>
+</div>
+
+<div class="container div_bg">
+  <form class="delete_button" action="/trips/<%=params[:trip_id]%>/expenses/<%=params[:id]%>" method="post">
+    <input type="hidden" name="_method" value="put">
+    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+
+    <label for="expense">Expense Description:</label>
+    <input type="text" class="form-control form_s240" placeholder="" name="expense[expense]" value="<%= Expense.find_by_id(params[:id]).try(:expense)%>">
+
+    <label for="cost">Cost:</label>
+    <input type="text" class="form-control form_s240" placeholder="" name="expense[cost]" value="<%= Expense.find_by_id(params[:id]).try(:cost)%>">
+
+    <div class="">
+      <input class="new_submit" type="submit" name="" value="Submit">
+    </div>
+  </form>
+</div>
