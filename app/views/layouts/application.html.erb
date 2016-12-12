@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
@@ -43,6 +44,7 @@
     </nav>
 
     <%= yield %>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGh4J2RKsYF8c83RREWX-h10VW1TLMbwE&callback=initMap"></script>
     <footer id="footer" class="navbar-inverse">
     </footer>
   </body>

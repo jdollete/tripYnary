@@ -25,7 +25,6 @@ a {
 
 .text-title {
   font-family: 'Glegoo', serif;
-  /*letter-spacing: 4px;*/
   color: white;
 }
 
@@ -86,4 +85,8 @@ label {
   font-family: 'Source Sans Pro', sans-serif;
   color: white;
   margin: 20px;
+}
+
+.detail_div {
+  margin-bottom: 40px;
 }
