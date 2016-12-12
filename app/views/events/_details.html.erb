@@ -1,0 +1,33 @@
+<div class="">
+  <div class="title-div title_inline">
+    <h2 class="text-title">Trip Itinerary</h2><br>
+  </div>
+  <div class="new_expense_button">
+    <a href="/trips/<%="#{@trip.id}"%>/expenses/new"><span class="glyphicon glyphicon-plus"></span></a>
+  </div>
+</div>
+
+<div class="">
+  <div class="">
+    <ul>
+      <div id="" class="event-content">
+          <% @trip.events.each do |event| %>
+            <li class="event_list"><%= event.title %> - <%= event.date %></li>
+              <ul>
+              <% event.eventitems.each do |eventitem| %>
+                <li class="event_list"><%= eventitem.description %></li>
+              <% end %>
+              </ul>
+          <% end %>
+      </div>
+    </ul>
+  </div>
+</div>
+
+<div class="">
+  <%= render partial: "trips/map" %>
+</div>
+
+<div class="">
+  <%= render partial: "trips/weather" %>
+</div>

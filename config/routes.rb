@@ -4,16 +4,16 @@ Rails.application.routes.draw do
 
   resources :trips do
     resources :expenses
+    resources :events do
+      resources :eventitems, only: [:create, :update, :destroy]
+    end
+    resources :packinglists do
+      resources :packingitems, only: [:create, :update, :destroy]
+    end
   end
 
-  resources :events do
-    resources :eventitems, only: [:create, :update, :destroy]
-  end
 
 
-  resources :packinglists do
-    resources :packingitems, only: [:create, :update, :destroy]
-  end
 
   get '/login' => 'sessions#new'
   post '/sessions' => 'sessions#create'
